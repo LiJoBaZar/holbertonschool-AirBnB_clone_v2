@@ -27,4 +27,4 @@ class State(BaseModel, Base):
             for value in all_inst_C.values():
                 if value.state_id == self.id:
                     list_city.append(value)
-            return list_city
+            return
