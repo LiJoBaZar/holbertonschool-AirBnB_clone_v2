@@ -22,6 +22,7 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key in ("created_at", "updated_at"):
                     value = datetime.fromisoformat(value)
+                    kwargs[key] = value
 
                 if "__class__" not in key:
                     self.__dict__.update(kwargs)
