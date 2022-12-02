@@ -51,7 +51,7 @@ class DBStorage:
         """new instance db storage"""
         self.__session.add(obj)
 
-    def save(self, obj):
+    def save(self):
         """save instance db storage"""
         self.__session.commit()
 
