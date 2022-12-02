@@ -9,9 +9,9 @@ from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
 
-class State(BaseModel):
+class State(BaseModel, Base):
     """ State class """
-    name = Column(String(128), nullalble=False)
+    name = Column(String(128), nullable=False)
     cities = relationship("City", backref="state")
 
     def __init__(self, *args, **kwargs):

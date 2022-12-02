@@ -45,10 +45,10 @@ class DBStorage:
                 for instance in self.__session.query(c).all():
                     key = instance.__class__.__name__ + '.' + instance.id
                     dict_new[key] = instance
-
-        for instance in self.__session.query(cls).all():
-            key = instance.__class__.__name__+'.' + instance.id
-            dict_new[key] = instance
+        else:
+            for instance in self.__session.query(cls).all():
+                key = instance.__class__.__name__+'.' + instance.id
+                dict_new[key] = instance
 
         return dict_new
 
