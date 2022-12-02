@@ -3,9 +3,10 @@ import unittest
 import console
 from console import HBNBCommand
 
+
 class Test_console(unittest.TestCase):
     """Test class"""
-    
+
     def test_console(self):
         """checking for documentation"""
         self.assertIsNotNone(console.__doc__)
