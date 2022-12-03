@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """ Place Module for HBNB project """
+import models
+from models.review import Review
+from models.amenity import Amenity
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, ForeignKey, Integer, Float, Table
+from sqlalchemy import Column, String, ForeignKey, Integer, Float
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -19,9 +22,21 @@ class Place(BaseModel, Base):
     price_by_night = Column(Integer, nullable=False, default=0)
     latitude = Column(Float, nullable=True)
     longitude = Column(Float, nullable=True)
+    reviews = relationship("Review", backref="place", cascade="delete")
+    # amenities = relationship("Amenity", sencondary="place_amenity",
+    #                          viewonly=True)
 
     amenity_ids = []
 
     def __init__(self, *args, **kwargs):
         """Initializa inherited"""
         super().__init__(*args, **kwargs)
+
+    if models.storage_type != "db":
+        @property
+        def reviews(self):
+            review_list = []
+            for review in list(models.storage.all(Review).values()):
+                if review.place_id == self.id:
+                    review_list.append(review)
+            return review_list
