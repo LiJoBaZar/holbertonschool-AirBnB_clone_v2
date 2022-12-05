@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""add a c routing with add default value in text"""
+"""
+Add a python routing with
+add default value in text
+"""
 from flask import Flask
 from markupsafe import escape
 
@@ -21,7 +24,7 @@ def hbnb():
 
 @app.route("/c/<text>")
 def c(text):
-    """Display web app root c and add text"""
+    """Display web app root c and add text variable"""
     return f"C {escape(text.replace('_', ' '))}"
 
 
