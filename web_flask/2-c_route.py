@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Add a c routing with add value in text
-"""
+"""Add a c routing with add value in text"""
 from flask import Flask
 from markupsafe import escape
 
