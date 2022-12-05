@@ -22,7 +22,7 @@ def hbnb():
 def c(text):
     """display custom third url page"""
     text = text.replace("_", " ")
-    return f"C {text}"
+    return "C {}".format(text)
 
 
 if __name__ == "__main__":
