@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Add a c routing with add value in text"""
 from flask import Flask
-from markupsafe import escape
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -23,7 +22,7 @@ def hbnb():
 def c(text):
     """Display web app root c and add text variable"""
     result = text.replace('_', ' ')
-    return f"c {escape(result)}"
+    return f"c {result}"
 
 
 if __name__ == "__main__":
