@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Add a c routing with add value in text"""
+"""Use variable with a routing"""
 from flask import Flask
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ def hbnb():
 def c(text):
     """Display web app root c and add text variable"""
     result = text.replace('_', ' ')
-    return f"c {result}"
+    return f"C {result}"
 
 
 if __name__ == "__main__":
