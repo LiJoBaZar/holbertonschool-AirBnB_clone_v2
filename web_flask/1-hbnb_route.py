@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""First connection using Flask"""
+"""Routing with other root"""
 from flask import Flask
 
 app = Flask(__name__)
