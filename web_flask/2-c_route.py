@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Routing with other root
-    and add text"""
+"""Routing with other root"""
 from flask import Flask
 
 app = Flask(__name__)
