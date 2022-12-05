@@ -25,14 +25,16 @@ def hbnb():
 @app.route("/c/<text>")
 def c(text):
     """Display web app root c and add text variable"""
-    return f"C {escape(text.replace('_', ' '))}"
+    result = text.replace('_', ' ')
+    return f"C {escape(result)}"
 
 
 @app.route("/python/", defaults={"text": "is cool"})
 @app.route("/python/<text>")
 def python(text):
     """Display web app root python and add default text"""
-    return f"Python {escape(text.replace('_', ' '))}"
+    result = text.replace('_', ' ')
+    return f"Python {escape(result)}"
 
 
 if __name__ == "__main__":
