@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Routing with other root
-and add txet"""
+    and add text"""
 from flask import Flask
 
 app = Flask(__name__)
