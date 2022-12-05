@@ -20,6 +20,7 @@ def hbnb():
 
 @app.route("/c/<text>")
 def c(text):
+    """display custom third url page"""
     text = text.replace("_", " ")
     return f"C {text}"
 
