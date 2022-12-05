@@ -23,14 +23,15 @@ def hbnb():
 def c(text):
     """display custom third url page"""
     text = text.replace("_", " ")
-    return f"C {text}"
+    return "C {}".format(text)
 
 
 @app.route("/python/", defaults={"text": "is cool"})
 @app.route("/python/<text>")
 def python(text):
     """display custom fourth url page"""
-    return f"Python {text.replace('_', ' ')}"
+    text = text.replace('_', ' ')
+    return "Python {}".format(text)
 
 
 if __name__ == "__main__":
