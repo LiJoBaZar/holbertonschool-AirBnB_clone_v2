@@ -24,7 +24,7 @@ class State(BaseModel, Base):
         def cities(self):
             """getter"""
             list_city = []
-            all_inst_C = models.String.all(City)
+            all_inst_C = models.storage.all(City)
             for value in all_inst_C.values():
                 if value.state_id == self.id:
                     list_city.append(value)
