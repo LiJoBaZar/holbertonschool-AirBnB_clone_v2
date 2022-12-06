@@ -37,8 +37,7 @@ def python(text):
 @app.route("/number/<int:n>")
 def number(n):
     """display custom 5th url page"""
-    if isinstance(n, int):
-        return "{} is a number".format(n)
+    return "{} is a number".format(n)
 
 
 if __name__ == "__main__":
