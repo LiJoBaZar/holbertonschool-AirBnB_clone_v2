@@ -8,7 +8,9 @@
 <BODY>
     <H1>States</H1>
     <UL>
-        <LI>{{state_dict.id}}: <B>{{state_dict.name}}</B></LI>
+        {% for state in state_dict.values()|sort(attribute="name") %}
+        <LI>{{state.id}}: <B>{{state.name}}</B></LI>
+        {% endfor %}
     </UL>
 </BODY>
 
