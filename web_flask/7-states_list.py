@@ -5,10 +5,9 @@ from models.state import State
 from flask import Flask, render_template
 
 app = Flask(__name__)
-strict_slashes=False
 
 
-@app.route("/states_list")
+@app.route("/states_list", strict_slashes=False)
 def state_list():
     """display list of states"""
     state_ = storage.all(State)
