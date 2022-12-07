@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """use flask with storage and db storage"""
 from models import storage
+from models.state import State
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -9,13 +10,12 @@ app = Flask(__name__)
 @app.route("/states_list", strict_slashes=False)
 def state_list():
     """display list of states"""
-    state = storage.all("State")
-    state = [state for state in state.values()]
+    state = storage.all(State).values()
     return render_template("7-states_list.html", state=state)
 
 
 @app.teardown_appcontext
-def teardown():
+def teardown(execption):
     """close storage"""
     return storage.close()
 
