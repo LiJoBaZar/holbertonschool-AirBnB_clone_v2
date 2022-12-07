@@ -5,14 +5,14 @@ from models.state import State
 from flask import Flask, render_template
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False
+strict_slashes=False
 
 
 @app.route("/states_list")
 def state_list():
     """display list of states"""
-    state_list = storage.all(State)
-    return render_template("7-states_list.html")
+    state_ = storage.all(State)
+    return render_template("7-states_list.html", state_dict=state_)
 
 
 @app.teardown_appcontext
