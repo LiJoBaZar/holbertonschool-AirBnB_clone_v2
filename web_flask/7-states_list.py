@@ -15,9 +15,9 @@ def state_list():
 
 
 @app.teardown_appcontext
-def teardown(exception):
+def teardown():
     """close storage"""
-    storage.close()
+    return storage.close()
 
 
 if __name__ == "__main__":
