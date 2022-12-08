@@ -11,7 +11,7 @@ app = Flask(__name__)
 def state_list():
     """display list of states"""
     state = storage.all(State).values()
-    return render_template("9-states.html", state=state, mode="state")
+    return render_template("9-states.html", states=state, mode="state")
 
 
 @app.route("/states/<id>")
@@ -20,6 +20,7 @@ def states_id(id):
     for state in storage.all(State).values():
         if state.id == id:
             return render_template("9-states.html", states=state, mode="state_id")
+    return render_template("9-states.html", states=state, mode="none")
 
 
 @app.teardown_appcontext
